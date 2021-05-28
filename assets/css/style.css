@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --yellow:#F2E52E;
+    --blue:#44C1F2;
+    --light-blue:#66D9D9;
+    --black:#333;
+    --white:#fff;
+}
+section{
+    position: relative;
+    min-height: 100vh;
+    background:var(--blue);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+section::before{
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:var(--yellow);
+}
+.dark{
+    --yellow:#BF11A2;
+    --blue:#090A26;
+    --white:#333; 
+    --light-blue:#5A4BBF;  
+    --black:#fff;
+}
+section .switch-menu{
+    position: absolute;
+    width:50px;
+    height: 50px;
+    top: 50px;
+    right:100px;
+    background: #090A26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 5;
+    cursor:pointer;
+}
+section .switch-menu::before{
+    content: '\f186';
+    font-family: FontAwesome;
+    font-size: 1.5em;    
+    color:#BF11A2;
+}
+section .switch-menu.active::before{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: '\f185';
+    font-family: FontAwesome;
+    font-size: 1.5em;    
+    color:#F2E52E;
+    background: #44C1F2;
+}
+section .container{
+    position: relative;
+    width:1100px;
+    height:550px;
+    background:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .container .infocont{
+    position: absolute;
+    top:40px;
+    left: 0;
+    width:350px;
+    height:calc(100% - 80px);
+    padding:20px 40px;
+    background:var(--blue);  
+    z-index: 2;  
+}
+section .container .infocont h2{
+    position: relative;
+    text-align: center;
+    padding:30px;
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight:500;
+}
+section .container .infocont .contact{
+    position: relative;
+}
+section .container .infocont .contact li{
+    position: relative;
+    list-style: none;
+    margin-bottom:40px;
+}
+section .container .infocont .contact li .fa-home,
+section .container .infocont .contact li .fa-phone,
+section .container .infocont .contact li .fa-envelope-o{
+    position: relative;
+    font-size: 2.3em;
+    display:inline-block;    
+    color: var(--black);
+}
+section .container .infocont .contact li span{
+    position:absolute;
+    margin-left:15px;
+    display: inline-block;
+    color:var(--black);    
+}
+section .container .infocont ul.sci{
+    position: relative;
+    display:flex;
+    justify-content:flex-start;
+    
+}
+section .container .infocont .sci li{
+    position:relative;
+    list-style: none;
+    margin-left:20px;
+}
+section .container .infocont .sci li a{
+    position:relative;
+    display: inline-block;
+}
+section .container .infocont .sci li a img{
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 50%;
+    transition:0.3s;
+}
+section .container .infocont .sci li a img:hover{
+    opacity:100%;
+}
+.dark .sci{
+    filter: invert(1);
+}
+section .container .infoform{
+    position:relative;
+    padding:50px 80px;
+    width:calc(100% - 150px);
+    height:100%;
+    background: var(--light-blue); 
+    margin-left: 150px;
+    padding-left: 250px;
+    
+}
+section .container .infoform h2{
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--black);
+}
+section .container .infoform .formbx{
+    position:relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+section .container .infoform .formbx .inputbx{
+    position:relative;
+    margin-top:35px
+}
+section .container .infoform .formbx .inputbx.w50{
+    width:47%;
+}
+section .container .infoform .formbx .inputbx.w100{
+    width:100%;
+}
+section .container .infoform .formbx .inputbx textarea{
+    height:180px;
+}
+section .container .infoform .formbx .inputbx input,
+section .container .infoform .formbx .inputbx textarea{
+    position:relative;
+    width:100%;
+    background:transparent;
+    padding: 0 5px;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: var(--white);
+    z-index: 5;
+    
+}section .container .infoform .formbx .inputbx span{
+    position: absolute;
+    left: 2px;
+    top: 0;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color:var(--black);
+    transition: 0.3s;
+}
+
+section .container .infoform .formbx .inputbx input:valid + span,
+section .container .infoform .formbx .inputbx input:focus + span,
+section .container .infoform .formbx .inputbx textarea:valid +  span,
+section .container .infoform .formbx .inputbx textarea:focus + span{
+    position:absolute;
+    font-size: 16px;
+    font-weight: 300;
+    transform: translateY(-25px);
+}
+section .container .infoform .formbx .inputbx .line{
+    position:absolute;
+    display: block;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height:2px;
+    border-radius:2px;
+    background:var(--black);
+}
+section .container .infoform .formbx .inputbx input:valid ~ .line,
+section .container .infoform .formbx .inputbx input:focus ~ .line,
+section .container .infoform .formbx .inputbx textarea:valid ~ .line,
+section .container .infoform .formbx .inputbx textarea:focus ~ .line{
+    height:100%;
+    top:0;
+}
+section .container .infoform .formbx .error-Input {
+    position:relative;
+    border: 2px solid red !important;
+    z-index: 10;
+}
+section .container .infoform .formbx .inputbx input[type="submit"]{
+    width:150px;
+    padding:8px 10px;
+    border-radius:20px;
+    background:var(--black);
+    font-size: 1.2em;
+    font-weight: 500;
+    cursor:pointer;
+}
+@media (max-width: 1200px) {
+    section .container{
+        width:1000px;
+    }
+}
+@media (max-width: 1050px){
+    section .container{
+        width:900px;
+    }
+    section .container .infocont .contact {
+        position: relative;
+        margin-top: 40px;
+    }
+    section .container .infocont ul.sci {
+        position: relative;
+        margin-top: 100px;
+    }    
+    section .container .infocont{
+        height:100%;
+        top: 0;
+    }
+    section .container .infoform {
+        position: relative;
+        padding: 50px 80px;
+        width: calc(100% - 230px);
+        height: 100%;
+        background: var(--light-blue);
+        margin-left: 100px;
+        padding-left: 200px;
+    }
+}
+@media (max-width:921px){
+    section{
+        background: var(--yellow);
+        padding: 50px;
+        padding-top: 100px;
+    }
+    
+    section .switch-menu{
+        right: 20px;
+        top: 10px;
+    }
+    section .container {
+        position: relative;
+        width: 500px;
+        height: 1100px;
+        background: tranparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section .container .infocont {
+        height: 350px;
+        width: 100%;
+        top: 68.2%;
+        padding: 5px 80px;
+    }
+    section .container .infocont h2 {
+        padding: 5px;
+    }
+    section .container .infocont .contact {
+        margin-top: 10px;
+    }
+    section .container .infocont ul.sci {
+        position: relative;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+    }
+    section .container .infoform {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--light-blue);
+        margin-left: 0;
+        padding: 10px;
+        padding-top: 50px;
+        text-align: center;
+    }    
+    section .container .infoform .formbx {
+        position: relative;
+        width: 100%;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    section .container .infoform .formbx .inputbx.w50 {
+        width: 100%;
+    }
+    
+}
+
